@@ -17,7 +17,7 @@ def stylization(img,sigma_s_v,sigma_r_v):
 # 上传图像
 uploaded_file = st.file_uploader("Choose an image", type=["jpg", "png", "jpeg"])
 if uploaded_file is not None:
-   st.image(uploaded_file, caption='original img')
+   st.image(uploaded_file, caption='Original Image')
    img_cv=cv2.imdecode(np.frombuffer(uploaded_file.read(),np.uint8),cv2.IMREAD_COLOR)
    sigma_s_v = st.slider(label='sigma_s',
                              min_value = 0.0,
