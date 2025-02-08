@@ -1,4 +1,1 @@
-buils-essential
-pkg-config
-opencv-python
-PIL
+
