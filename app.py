@@ -36,6 +36,6 @@ if uploaded_file is not None:
        for i in range(10):
           progress_bar.progress(i/9, 'Processing, please wait...')
           time.sleep(1)
-       st.image(Sketch, caption="edged Image", use_container_width=True)
+       st.image(img_processed, caption="Output Image", use_container_width=True)
        iniv_sigma_s_v=sigma_s_v
        iniv_sigma_r_v=sigma_r_v
