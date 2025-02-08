@@ -10,7 +10,7 @@ iniv_sigma_r_v=0
 # 上传图像
 uploaded_file = st.file_uploader("Choose an image", type=["jpg", "png", "jpeg"])
 if uploaded_file is not None:
- img_cv=cv2.imdecode(np.frombuffer(uploaded_file.read(),np.uint8),cv2.IMREAD_COLOR)
+   img_cv=cv2.imdecode(np.frombuffer(uploaded_file.read(),np.uint8),cv2.IMREAD_COLOR)
 
 sigma_s_v = st.slider(label='sigma_s',
                              min_value = 0.0,
@@ -30,7 +30,7 @@ def stylization(img,sigma_s_v,sigma_r_v):
     result = cv2.stylization(img,sigma_s=sigma_s_v,sigma_r = sigma_r_v)
     return result
 
-if sigma_s_v != iniv_sigma_r_v or sigma_r_v != iniv_sigma_r_v:
+if img_cv is not None and sigma_s_v != iniv_sigma_r_v or sigma_r_v != iniv_sigma_r_v:
     img = cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB)
     img_processed = stylization(img,sigma_s_v,sigma_r_v)
     progress_bar = st.empty()
