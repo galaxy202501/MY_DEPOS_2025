@@ -6,7 +6,7 @@ from PIL import Image
 
 iniv_sigma_s_v=0
 iniv_sigma_r_v=0
-img_cv
+img_cv=""
 
 
 # 图像水彩画效果处理
