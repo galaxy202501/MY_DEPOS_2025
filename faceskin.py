@@ -69,12 +69,12 @@ if __name__ == "__main__":
         contrast= st.slider(label='contrast',
                                      min_value = 0.0,
                                      max_value= 50.0,
-                                     value = 1.2,
+                                     value = 1.6,
                                     )
         brightness = st.slider(label='brightness',
                                        min_value = 0.0,
                                        max_value = 5.0,
-                                       value = 1.6,
+                                       value = 1.2,
                                        )
         img_sharpen=img_sharpen(img_process,contrast,brightness )
         img = cv2.cvtColor(img_sharpen, cv2.COLOR_BGR2RGB)
