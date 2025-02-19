@@ -14,16 +14,18 @@ def upload_field():
        return None
 
 # 程序的主要逻辑
-def skin_process(img_file):
+def skin_process(img_file, effect):
     image=img_file
-    step = 5
+    step = 2
+    pw=effect/10
     # 图片大一点，此处尺寸大一点
     kernel = (16, 16) 
     image = image / 255
     image_size = image.shape[:2]
     # round() 方法返回浮点数x的四舍五入值
     source_size = (int(round(image_size[1] * step)), int(round(image_size[0] * step)))
-    target_size = (int(round(kernel[0] * step)), int(round(kernel[0] * step)))
+    target_size = (int(round(kernel[0] * step*pw)), int(round(kernel[0] * step*pw)))
+    print(target_size)
     # cv2.resize() 方法对图片进行缩放，插值方法: 双线性插值（默认设置）
     sI = cv2.resize(image, source_size, interpolation=cv2.INTER_LINEAR)
     sp = cv2.resize(image, source_size, interpolation=cv2.INTER_LINEAR)
@@ -64,17 +66,22 @@ def img_sharpen(img_process,contrast,brightness):
 
 if __name__ == "__main__": 
     img_upload = upload_field()
-    if img_upload is not None:
-        img_process=skin_process(img_upload)
+    if img_upload is not None:        
+        effect= st.slider(label='effect',
+                                     min_value = 1,
+                                     max_value= 10,
+                                     value = 4,
+                                    )
+        img_process=skin_process(img_upload, effect)
         contrast= st.slider(label='contrast',
                                      min_value = 0.0,
                                      max_value= 50.0,
-                                     value = 1.6,
+                                     value = 1.2,
                                     )
         brightness = st.slider(label='brightness',
                                        min_value = 0.0,
                                        max_value = 5.0,
-                                       value = 1.0,
+                                       value = 1.6,
                                        )
         img_sharpen=img_sharpen(img_process,contrast,brightness )
         img = cv2.cvtColor(img_sharpen, cv2.COLOR_BGR2RGB)
