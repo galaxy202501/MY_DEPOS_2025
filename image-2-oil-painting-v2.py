@@ -50,6 +50,8 @@ def oil_painting_effect(img_upload, intensity, quant_level, edge_threshold,edge_
 
 
 if __name__ == "__main__": 
+    st.text("For more image tools, please visite our web ")
+    st.page_link("https://www.redpandatail.com", label="www.redpandatail.com", icon="🌎")
     img_upload = upload_field()
     if img_upload is not None: 
         intensity= st.slider(label=' intensity',
