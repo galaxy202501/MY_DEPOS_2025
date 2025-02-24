@@ -4,6 +4,8 @@ import numpy as np
 import time
 
 def upload_field():
+    st.text("For more image tools, please visite our web ")
+    st.page_link("https://www.redpandatail.com", label="www.redpandatail.com", icon="🌎")
     # 上传图像
     uploaded_file = st.file_uploader("Choose an image", type=["jpg", "png", "jpeg"])
     if uploaded_file is not None:
