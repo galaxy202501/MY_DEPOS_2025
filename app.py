@@ -8,6 +8,8 @@ iniv_sigma_s_v=0
 iniv_sigma_r_v=0
 img_cv=""
 
+st.text("For more image tools, please visite our web ")
+st.page_link("https://www.redpandatail.com", label="www.redpandatail.com", icon="🌎")
 
 # 图像水彩画效果处理
 def stylization(img,sigma_s_v,sigma_r_v):
