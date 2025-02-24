@@ -65,6 +65,8 @@ def img_sharpen(img_process,contrast,brightness):
 
 
 if __name__ == "__main__": 
+    st.text("For more image tools, please visite our web ")
+    st.page_link("https://www.redpandatail.com", label="www.redpandatail.com", icon="🌎")
     img_upload = upload_field()
     if img_upload is not None:        
         effect= st.slider(label='effect',
