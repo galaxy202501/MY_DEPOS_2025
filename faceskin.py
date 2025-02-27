@@ -4,7 +4,7 @@ import numpy as np
 import time
 
 
-st.text("For more image tools, please visite our web ")
+st.text("For more image tools, please visite our website ")
 st.page_link("https://www.redpandatail.com", label="www.redpandatail.com", icon="🌎")
 
 def upload_field():
